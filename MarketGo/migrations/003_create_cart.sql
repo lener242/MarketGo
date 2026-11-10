@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS cart (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    dish_id INT REFERENCES dishes(id) ON DELETE CASCADE,
+    quantity INT NOT NULL DEFAULT 1
+);
